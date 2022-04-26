@@ -77,6 +77,6 @@ O documento de entrega (README.md) deve ser vidido em 5 grande áreas:
 2. Criação de um artigo para ser publicado no Medium e no Linkedin.
 3. Publicação do trabalho e do artigo na Comunidade DS.
 
-Dados: https://www.kaggle.com/datasets/harlfoxem/housesalesprediction
+Dados: <https://www.kaggle.com/datasets/harlfoxem/housesalesprediction>
 
-Definições das Colunas :https://www.kaggle.com/datasets/harlfoxem/housesalesprediction/discussion/207885
+Definições das Colunas: <https://www.kaggle.com/datasets/harlfoxem/housesalesprediction/discussion/207885>
