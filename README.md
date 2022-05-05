@@ -162,7 +162,9 @@ O valor total de economia ao adiquirir todos os imóveis selecionados é de R$ 3
 ## Venda
 
 Para a venda dos imóveis, foi levado em consideração somente as 3.777 unidades possíveis de compra.
+
 A lucratividade total estimada é de: 426.715.962,90
+
 A lucratividade por sazonalidade estimada é de:
 | estacoes | lucro_venda |
 | -------- | ----------- |
