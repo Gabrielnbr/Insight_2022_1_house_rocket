@@ -1,14 +1,12 @@
 # ============
 # 0 Imports
 # ============
-
 import streamlit as st
 from multiapp import MultiApp
 from apps import home_page, features_estatistica, hipoteses, questoes_negocio
 
-app = MultiApp()
 
-st.markdown(" Só um teste de Markdown")
+app = MultiApp()
 
 # Inicialização do app
 app.add_app("1. Home Page", home_page.app)

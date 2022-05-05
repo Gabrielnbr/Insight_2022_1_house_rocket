@@ -21,6 +21,7 @@ import geopandas
 from matplotlib import pyplot as plt
 from matplotlib import gridspec
 
+import datetime as dt
 from apps import transformacao_dados
 
 # 0.1 CONFIG LAYOUT
@@ -33,48 +34,51 @@ pd.set_option('display.float_format', '{:.4f}'.format)
 def getdata(path):
     return pd.read_csv(path)
 
-@st.cache(allow_output_mutation=True)
+@st.cache( allow_output_mutation=True)
 def get_geofile(url):
     return geopandas.read_file(url)
-
-@st.cache(allow_output_mutation=True)
-def features (data_set):
-
-    data_set.rename(columns = {'id': 'id', 'date': 'data_venda', 'price':'preco', 'bedrooms':'quartos', 'bathrooms':'banheiros',
-                            'sqft_living': 'm2_construido_total','sqft_lot':'m2_terreno_total', 'floors':'andares', 'waterfront':'vista_agua',
-                            'view':'vista_geral', 'condition':'condicao', 'grade':'nivel_construcao','sqft_above':'m2_construidos_chao',
-                            'sqft_basement':'m2_porao', 'yr_built':'ano_construido', 'yr_renovated':'ano_reformado', 'zipcode':'cep',
-                            'lat':'latitude', 'long':'longitude'}, inplace=True)
-
-    data_set['data_venda'] = pd.to_datetime(data_set['data_venda'], format="%Y-%m-%d")
-
-    data_set.drop(columns=['sqft_living15','sqft_lot15'], inplace=True)
-    data_set.drop_duplicates(['id'],inplace=True)
-
-    data_set.loc[data_set['quartos'] == 33, 'quartos'] = 3
-
-    # Mudando de pés2 para m2
-    data_set['m2_construido_total'] = data_set['m2_construido_total'].apply(lambda x: x*0.09290304)
-    data_set['m2_terreno_total'] = data_set['m2_terreno_total'].apply(lambda x: x*0.09290304)
-    data_set['m2_construidos_chao'] = data_set['m2_construidos_chao'].apply(lambda x: x*0.09290304)
-    data_set['m2_porao'] = data_set['m2_porao'].apply(lambda x: x*0.09290304)
-
-    return data_set
 
 def show(data):
     st.subheader("Testando aqui")
     st.dataframe(data)
 
+def atributos():
+    
+    text = """
+    | Nome_Coluna | Tradução | Descrição |
+    | ----------- | -------- | --------- |
+    | id | id | ID exclusivo para cada casa vendida |
+    | date | data_venda | Data da venda da casa |
+    | price | preco | Preço de cada casa vendida |
+    | bedrooms | quartos | Número de quartos |
+    | bedrooms | banheiros | Número de banheiros, onde 0,5 representa um quarto com vaso sanitário, mas sem chuveiro |
+    | sqft_living | m2_construido_total | Metragem quadrada do espaço interior dos apartamentos |
+    | sqft_lot | m2_terreno_total | Metragem quadrada do espaço terrestre |
+    | floors | andares | Número de andares |
+    | waterfront | vista_agua | Variável fictícia para saber se o apartamento estava com vista para a orla ou não |
+    | view | vista_geral | Índice de 0 a 4 de quão boa era a vista do imóvel. 0 é a pior vista e 4 é a melhor vista |
+    | condition | condicao | Índice de 1 a 5 sobre a condição do apartamento. 1 é a pior condição e 5 é a melhor |
+    | grade | nivel_construcao | Índice de 1 a 13, onde 1-3 fica aquém da construção e design de edifícios, 7 tem um nível médio de construção e design e 11-13 tem um alto nível de construção e design. |
+    | sqft_above | m2_construidos_chao | Metragem quadrada do espaço interno da habitação que está acima do nível do solo |
+    | sqft_basement | m2_porao | Metragem quadrada do espaço interno da habitação que está abaixo do nível do solo |
+    | yr_built | ano_construído | Ano em que a casa foi construída |
+    | yr_renovated | ano_reformado | Ano da última reforma da casa |
+    | zipcode | cep | Em que área de código postal a casa está |
+    | lat | latitude | latitude |
+    | long | longitude | longitude |
+    | sqft_living15 | nao_traduzido | Metragem quadrada do espaço habitacional interior para os 15 vizinhos mais próximos |
+    | sqft_lot15 | nao_traduzido | A metragem quadrada dos lotes dos 15 vizinhos mais próximos |
+    """
+    
+    st.markdown(text)
+    
+    #img = Image.open('img\Atributos.png')
+    #st.image(img)
+    
+    return None
+
 def app():
+    data = transformacao_dados.pull_data()
     
-    path = "../A_House_Rocket/data_set/kc_house_data.csv"
-    # url = "https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson"
-    
-    data_set = getdata(path)
-    
-    data_set = features(data_set)
-    
-    #data = transformacao_dados.pull_data()
-    #url = "https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson"
-    
-    show(data_set)
+    show(data)
+    atributos()
