@@ -132,20 +132,20 @@ Com as fetures em desenvolvidas, foi o momento de remontar o quadro estatístico
 
 Após a construção do quadro, foi plotado novamente os histogramas com todas as variáveis, afim de fechar o ciclo inicial de exploração dos dados e passar para as hipótes e questões de negócio.
 
-![Histograma](Image\\Histograma.png)
+![Histograma](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Histograma.png)
 
 Após o processe de entendimento dos dados fomos as respostas das hipóteses:
 
 | Hipótese | Resultado | Gráfico |
 | -------- | --------- | ------- |
-| H1: Imóveis que possuem vista para água são pelo menos 30% mais caros, na média. | H1 é verdadeira, pois os imóveis com vista para a água, em média, são 212.42% mais caros. | ![h1](Image\Hipoteses\h1.png) |
-| H2: Imóveis com data de construção menor do que 1955, são 50% mais baratos na média. | H2 é falsa, pois os imóveis anteriores a 1955, são em média 0.62% mais caros. | ![h2](Image\Hipoteses\h2.png) |
-| H3: Imóveis sem porão possuem m2_construcao_total 50% maiores do que com porão, na média. | H3 é falsa, pois os imóveis sem porão são, em média, -18.56% maiores do que imóveis com porão. | ![h3](Image\Hipoteses\h3.png) |
-| H4: O Crescimento do preço dos imóveis YoY (Year over Year) é de 10%, em média. | H4 é falsa, pois o crescimento dos preços dos imóveis YoY, em média, é de 0.05% | ![h4](Image\Hipoteses\h4.png) |
-| H5: Imóveis com 3 banheiros tem um crescimento médio no Preço MoM (Month of Month) de 15%. | H5 é falsa, os imóveis não possuem um crescimento MoM de 15%, pois ele prossui uma variação média no período de 1.07% | ![h5](Image\Hipoteses\h5.png) |
-| H6: Imóveis no inverno são, em média, são 20% mais baratos do que o resto do ano. | H6 é falsa, pois em média o valor dos imóveis no inverno é -4.62% em comparação ao resto do ano. | ![h6](Image\Hipoteses\h6.png) |
-| H7: Pelo menos 80% dos imóveis com condição 4 e 5 tem níveis de construção 7 ou mais. | H7 é verdadeira, pois os imóveis com boa condição representão 85.68%. Sendo o total de imóveis em boa condção: 7332 e os imóveis com nível de construção 7 ou mais: 6282. | ![h7](Image\Hipoteses\h7.png) |
-| H8: Pelo menos 80% dos imóveis com vista para água possuem nível de construção 10 ou mais. | H8 é falsa, pois os imóveis com boa condição representão 36.20%. Sendo o total de imóveis em boa condção: 163 e os imóveis com nível de construção 10 ou mais: 59. | ![h8](Image\Hipoteses\h8.png) |
+| H1: Imóveis que possuem vista para água são pelo menos 30% mais caros, na média. | H1 é verdadeira, pois os imóveis com vista para a água, em média, são 212.42% mais caros. | ![h1](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h1.png) |
+| H2: Imóveis com data de construção menor do que 1955, são 50% mais baratos na média. | H2 é falsa, pois os imóveis anteriores a 1955, são em média 0.62% mais caros. | ![h2](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h2.png) |
+| H3: Imóveis sem porão possuem m2_construcao_total 50% maiores do que com porão, na média. | H3 é falsa, pois os imóveis sem porão são, em média, -18.56% maiores do que imóveis com porão. | ![h3](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h3.png) |
+| H4: O Crescimento do preço dos imóveis YoY (Year over Year) é de 10%, em média. | H4 é falsa, pois o crescimento dos preços dos imóveis YoY, em média, é de 0.05% | ![h4](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h4.png) |
+| H5: Imóveis com 3 banheiros tem um crescimento médio no Preço MoM (Month of Month) de 15%. | H5 é falsa, os imóveis não possuem um crescimento MoM de 15%, pois ele prossui uma variação média no período de 1.07% | ![h5](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h5.png) |
+| H6: Imóveis no inverno são, em média, são 20% mais baratos do que o resto do ano. | H6 é falsa, pois em média o valor dos imóveis no inverno é -4.62% em comparação ao resto do ano. | ![h6](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h6.png) |
+| H7: Pelo menos 80% dos imóveis com condição 4 e 5 tem níveis de construção 7 ou mais. | H7 é verdadeira, pois os imóveis com boa condição representão 85.68%. Sendo o total de imóveis em boa condção: 7332 e os imóveis com nível de construção 7 ou mais: 6282. | ![h7](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h7.png) |
+| H8: Pelo menos 80% dos imóveis com vista para água possuem nível de construção 10 ou mais. | H8 é falsa, pois os imóveis com boa condição representão 36.20%. Sendo o total de imóveis em boa condção: 163 e os imóveis com nível de construção 10 ou mais: 59. | ![h8](https://github.com/Gabrielnbr/Insight_1_house_rocket/blob/main/Image/Hipoteses/h8.png) |
 
 ## 5. Resultados Financeiros
 
