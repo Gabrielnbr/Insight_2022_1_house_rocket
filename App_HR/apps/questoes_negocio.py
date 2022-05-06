@@ -1,10 +1,3 @@
-# 4. Questões de negócio
-# Montar os mapas de compra dos imóveis
-# Como são poucas tabelas a gente pode aplicar filtros em relação:
-    # 1. Preco dos imóveis Cep
-    # ...
-# Colocar o botão de fazer download do data_set
-
 import streamlit      as st
 import pandas         as pd
 import plotly.express as px
@@ -13,7 +6,6 @@ import folium
 from streamlit_folium import folium_static
 from folium.plugins   import MarkerCluster
 
-from matplotlib import pyplot as plt
 from apps import transformacao_dados
 
 def transformacao_negocio_a (data_set):
@@ -44,8 +36,6 @@ def questao_negocio_a (data_set):
 
 def filtros_dash_qna (data_set,qna):
     data_dash = pd.merge( data_set, qna[['id','comprar','economia','mediana_preco']], on='id')
-    
-    st.title('Dashboard')
     
     # Os filtros possuem 2 linhas
     # Linha 1 dos filtros
@@ -174,8 +164,6 @@ def questao_negocio_b(data_set, qn1):
 def filtros_dash_qnb (data_set, qnb):
     data_dash = pd.merge( data_set, qnb[['id','preco_venda','lucro_venda','preco_compra']], on='id')
     
-    st.title('Dashboard')
-    
     # Os filtros possuem somente 1 linha
     c1, c3, c5, c7 = st.columns((4))
     
@@ -243,7 +231,7 @@ def dashboard_qnb(data_set):
     return None
 
 def app():
-    st.subheader("Questões de Negócio")
+    st.title("Questões de Negócio")
     data_set = transformacao_dados.pull_data()
     #   geofile = transformacao_dados.get_geo_path()
     
@@ -251,10 +239,12 @@ def app():
     qn1 = transformacao_negocio_a(data_set)
     qn1 = questao_negocio_a(qn1)
     dash_qn1 = filtros_dash_qna(data_set, qn1) # filtros
+    st.header('Dashboard')
     dashboard_qna(dash_qn1) # Dashboard
     
     st.markdown('### Questão de negócio 2: Qual o melhor período de venda dos imóveis e por quanto vender?')
     qn2 = transformação_negocio_b(data_set)
     qn2 = questao_negocio_b(qn2, qn1)
     dash_qn2 = filtros_dash_qnb(data_set, qn2)
+    st.header('Dashboard')
     dashboard_qnb(dash_qn2)

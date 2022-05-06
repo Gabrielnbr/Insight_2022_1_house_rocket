@@ -9,8 +9,14 @@ import os
 def get_data(path):
     return pd.read_csv(path)
 
+@st.cache( allow_output_mutation=True)
 def get_path():
     path = 'data_set/kc_house_data.csv'
+    return path
+
+@st.cache( allow_output_mutation=True)
+def get_path_to_export():
+    path = 'data_set/house_data_transformado.csv'
     return path
 
 @st.cache( allow_output_mutation=True)
@@ -19,11 +25,8 @@ def get_geo_path():
     geo_data = geopandas.read_file(url)
     return geo_data
 
-
 def transformacao (data_set):
     
-    #data_set['date'] = pd.to_datetime(data_set['date'])
-    #data_set['date'] = pd.to_datetime(data_set['date']).date()
     data_set['date'] = pd.to_datetime(data_set['date']).dt.date
 
     data_set.drop(columns=['sqft_living15','sqft_lot15'], inplace=True)
@@ -81,31 +84,20 @@ def features(data_set):
     return data_set
 
 def exportar (data_set):
-    path_to_export = 'data_set/house_data_transformado.csv'
+    path_to_export = get_path_to_export()
     data_set.to_csv(path_to_export, index=False)
 
 def teste_exportar ():
-    """
-    Criar um método para exportar o documento?
-    Da para criar aqui mesmo?
-    para onde vou exportar?
+    path_exportado = get_path_to_export()
     
-    Salvar um arquivo após a transformação
-    Se o arquivo exitir ele não faz a transformação
-    Se não existir faz a transformação e cria o arquivo
+    if os.path.exists(path_exportado) == False:
+        data_set_exportado = 0
+        return data_set_exportado, 0
     
-    Se data_set_exportado == True == 1 return path do exportado
-    Se data_set_exportado == False == 0 return path do não exportado
-    """
-    path_exportado = 'data_set/house_data_transformado.csv'
-    
-    if os.path.exists(path_exportado) == True:
+    else:
         data_set_exportado = 1
         return data_set_exportado, path_exportado
     
-    else:
-        data_set_exportado = 0
-        return data_set_exportado
 
 def pull_data():
     

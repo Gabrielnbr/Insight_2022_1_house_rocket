@@ -1,19 +1,13 @@
-# 2. Transformações, features e estatística
-# Somente textos e tabelas estáticas com as explicações
-# Na pate da estatística podemos colcoar filtro de linha e coluna.
-
 import streamlit      as st
-import numpy          as np
-import pandas            as pd
+import pandas         as pd
 
 from matplotlib import pyplot as plt
 from apps import transformacao_dados
 
-def mostra_tabela(data_set):
+def mostra_histograma(data_set):
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
-    st.header('Gráficos contagem')
-    st.write('Explicar o pq desse gráfico?')
+    st.header('Histograma')
         
     var_num = data_set.select_dtypes(include=['int64','float64','int32','float32'])
     plt.subplot()
@@ -25,10 +19,14 @@ def mostra_tabela(data_set):
     
     return None
 
-def explica_features(data_set):
+def features(data_set):
     
     st.header('Tabela Features')
-    st.write('Explicação da criação dessa feature e o pq?')
+    
+    text = """
+    As features foram desenvolvidas a partir da necessidade de responder as perguntas de negócio e as hipóteses.
+    """
+    st.markdown(text)
     
     texto = """
     | Nome_Feature | Descrição |
@@ -46,10 +44,9 @@ def explica_features(data_set):
     
     return None
 
-def explica_estatística(data_set):
+def estatistica(data_set):
     
     st.header('Tabela Estatística')
-    st.write('Explicar para que serve e o pq de está aqui.')
     
     skewness = data_set.skew()
     kurtosis = data_set.kurtosis()
@@ -67,44 +64,10 @@ def explica_estatística(data_set):
     return None
 
 def app():
-    st.subheader("Features e Estatística")
+    st.title("Features e Estatística")
     
     data_set = transformacao_dados.pull_data()
     
-    explica_features(data_set)
-    explica_estatística(data_set)
-    mostra_tabela(data_set)
-
-
-
-
-
-# Testado, mas sem chegar a lugar algum
-"""def mostra_tabela(data_set):
-    
-    var_num = data_set.select_dtypes(include=['int64','float64','int32','float32'])
-    
-    # fig, ax = plt.subplot()
-    # fig = plt.hist(var_numericas_2)
-    
-    #fig = var_num.hist(figsize=(16,9), bins=40)
-    #plt.tight_layout()
-    #st.plotly_chart()
-    
-    #st.pyplot(fig)
-    
-    #plt.figure(figsize=(16,12))
-    
-    for i in (np.arange(25)+1):
-        plt.subplot(5,5,i)
-        plt.hist(var_num, x=var_num[i], bins=40)
-        plt.plot()
-    plt.tight_layout()
-
-    # O mais perto que eu consegui
-    fig, ax =plt.subplots(5,5)
-    ax = var_num.hist(bins= 40)
-    plt.tight_layout()
-    st.pyplot(fig)
-    
-    return None"""
+    features(data_set)
+    estatistica(data_set)
+    mostra_histograma(data_set)

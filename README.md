@@ -1,12 +1,8 @@
 # 1º Projeto de Insight: House Rocket
 
-***
-
 ## Orientações
 
 Todo contexto de negócio envolvendo este projeto é fictício. A base de dados foi extratida do [Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction) e desenvolvida com a ajuda da [Comunidade DS](https://www.comunidadedatascience.com/).
-
-***
 
 ## 1. Negócio
 
@@ -16,7 +12,7 @@ Com este projeto eles poderão definir os valores de aporte para comprar as casa
 
 ### 1.1. Questões de negócio
 
-Pnsando na tomada de decisão do time de negócios, podemos considerar 2:
+Pnsando na tomada de decisão do time de negócios, podemos consideramos 2 condições:
 
 1. O time de negócio precisa ter uma ação rápida ao analizar quais casas comprar.
 2. Uma vez comprada essas casas qual seria o melhor momento para vendê-las.

@@ -38,7 +38,7 @@ class MultiApp:
 
     def run(self):
         app = st.selectbox(
-            'Seleciona a página',
+            'Selecione a página',
             self.apps,
             format_func=lambda app: app['title'])
 

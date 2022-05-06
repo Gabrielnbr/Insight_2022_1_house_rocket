@@ -1,49 +1,37 @@
-# 1. Home Page
-# Explicação do Projeto
-    # 1. Introdução e Premissas
-    # 2. Data set + Filtros Zipcode, Preço (Min Max), Sazonalidade, Quais colunas quer ver.
-
 # ===================
 # 0.1 Imports
 # ===================
 
-import streamlit as st
-# Como faz a classe multiapp??? o vídeo não mostra, buscar outas alternativas.
-
-
-import pandas         as pd
-import numpy          as np
-import seaborn        as sns
 import streamlit      as st
-import folium
-import geopandas
-
-from matplotlib import pyplot as plt
-from matplotlib import gridspec
-
-import datetime as dt
 from apps import transformacao_dados
 
-# 0.1 CONFIG LAYOUT
-st.set_page_config( layout='wide' )
-np.set_printoptions(suppress=True)
-pd.set_option('display.float_format', '{:.4f}'.format)
+def intro ():
+    
+    text = """
+    
+    A empresa House Rocket tem como negócio principal a compra, reforma e venda de imóveis nos EUA. Com isto, este projeto foi desenvolvido para auxiliar o time de negócio a encontrar o melhor momento de compra e venda dos imóveis.
 
-# Functions
-@st.cache( allow_output_mutation=True)
-def getdata(path):
-    return pd.read_csv(path)
+    Com este projeto eles poderão definir os valores de aporte para comprar as casas, quantas devem ser compradas, quais casas comprar e em qual localização, por quanto vender e qual será o lucro presumido.
 
-@st.cache( allow_output_mutation=True)
-def get_geofile(url):
-    return geopandas.read_file(url)
+    1.1. Questões de negócio
+
+    Pnsando na tomada de decisão do time de negócios, podemos consideramos 2 condições:
+
+    1. O time de negócio precisa ter uma ação rápida ao analizar quais casas comprar.
+    2. Uma vez comprada essas casas qual seria o melhor momento para vendê-las.
+
+    Desta forma temos as duas __questões de negócio__:
+
+    1. Quais são os melhores imóveis e por quanto comprar?
+    2. Qual o melhor período de venda dos imóveis e por quanto vender?
+    """
+    
+    st.markdown(text)
 
 def show(data):
-    st.subheader("Testando aqui")
     st.dataframe(data)
 
 def atributos():
-    
     text = """
     | Nome_Coluna | Tradução | Descrição |
     | ----------- | -------- | --------- |
@@ -72,13 +60,18 @@ def atributos():
     
     st.markdown(text)
     
-    #img = Image.open('img\Atributos.png')
-    #st.image(img)
-    
     return None
 
 def app():
     data = transformacao_dados.pull_data()
     
-    show(data)
-    atributos()
+    st.title("Página Inicial")
+    
+    intro()
+    
+    st.header("Base de dados original")
+    dt = transformacao_dados.get_data(transformacao_dados.get_path())
+    show(dt)
+    
+    #st.Header("Atributos modiificados")
+    #atributos()
