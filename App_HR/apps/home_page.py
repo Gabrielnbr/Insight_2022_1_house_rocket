@@ -73,5 +73,5 @@ def app():
     dt = transformacao_dados.get_data(transformacao_dados.get_path())
     show(dt)
     
-    #st.Header("Atributos modiificados")
-    #atributos()
+    st.header("Atributos")
+    atributos()
