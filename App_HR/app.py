@@ -10,10 +10,14 @@ st.set_page_config( layout='wide' )
 app = MultiApp()
 
 # Inicialização do app
-app.add_app("1. Pagina Inicial", home_page.app)
-app.add_app("2. Features e Estatistica", features_estatistica.app)
-app.add_app("3. Hipoteses", hipoteses.app)
-app.add_app("4. Questões de Negócio", questoes_negocio.app)
 
+def ap ():
+    app.add_app("1. Pagina Inicial", home_page.app)
+    app.add_app("2. Features e Estatistica", features_estatistica.app)
+    app.add_app("3. Hipoteses", hipoteses.app)
+    app.add_app("4. Questões de Negócio", questoes_negocio.app)
+
+if __name__ == '__main__':
+    ap()
 # Main app
-app.run()
+    app.run()
