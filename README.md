@@ -4,6 +4,10 @@
 
 Todo contexto de negócio envolvendo este projeto é fictício. A base de dados foi extratida do [Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction) e desenvolvida com a ajuda da [Comunidade DS](https://www.comunidadedatascience.com/).
 
+Acesse também os links:
+1. [Projeto em Produção com Streamlit e Heroku.](https://insight-1-gng-house-rocket.herokuapp.com/)
+2. [Artigo no Medium contando como foi minha experiência.](medium.com)
+
 ## 1. Negócio
 
 A empresa House Rocket tem como negócio principal a compra, reforma e venda de imóveis nos EUA. Com isto, este projeto foi desenvolvido para auxiliar o time de negócio a encontrar o melhor momento de compra e venda dos imóveis.
