@@ -2,7 +2,7 @@
 
 ## Orientações
 
-Acesse o meu [Linked-i]n(https://www.linkedin.com/in/gabriel-nobre-a0084682/)
+Acesse o meu [Linked-in](https://www.linkedin.com/in/gabriel-nobre-a0084682/)
 
 Todo contexto de negócio envolvendo este projeto é fictício. A base de dados foi extratida do [Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction) e desenvolvida com a ajuda da [Comunidade DS](https://www.comunidadedatascience.com/).
 
