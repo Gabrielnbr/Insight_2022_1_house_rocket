@@ -8,7 +8,7 @@ Todo contexto de negócio envolvendo este projeto é fictício. A base de dados 
 
 Acesse também os links:
 1. [Projeto em Produção com Streamlit e Heroku.](https://insight-1-gng-house-rocket.herokuapp.com/)
-2. [Artigo no Medium contando como foi minha experiência.](medium.com)
+2. [Artigo no Medium contando como foi minha experiência.](https://medium.com/@gabrielnobregalvao/1%C2%BA-projeto-de-insight-house-rocket-a67b83107098)
 
 ## 1. Negócio
 
