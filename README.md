@@ -7,8 +7,9 @@ Acesse o meu [Linked-in](https://www.linkedin.com/in/gabriel-nobre-a0084682/)
 Todo contexto de negócio envolvendo este projeto é fictício. A base de dados foi extratida do [Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction) e desenvolvida com a ajuda da [Comunidade DS](https://www.comunidadedatascience.com/).
 
 Acesse também os links:
-1. [Projeto em Produção com Streamlit e Heroku.](https://insight-1-gng-house-rocket.herokuapp.com/)
-2. [Artigo no Medium contando como foi minha experiência.](https://medium.com/@gabrielnobregalvao/1%C2%BA-projeto-de-insight-house-rocket-a67b83107098)
+1. ~[Projeto em Produção com Streamlit e Heroku.]~ Devido o Heroku descontinuar o serviço gratuito, o projeto foi migrado para o próprio serviço do Streamlit.
+2. [Projeto em Produção no Streamlit.](https://gabrielnbr-insight-1-house-rocket-app-hrapp-kge8fd.streamlit.app/)
+3. [Artigo no Medium contando como foi minha experiência.](https://medium.com/@gabrielnobregalvao/1%C2%BA-projeto-de-insight-house-rocket-a67b83107098)
 
 ## 1. Negócio
 
