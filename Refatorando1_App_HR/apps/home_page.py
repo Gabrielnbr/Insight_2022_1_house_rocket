@@ -62,20 +62,6 @@ def atributos():
     
     return None
 
-def contato():
-    st.subheader("Contato",divider= "orange")
-    
-    contato = '''                                                                                                                                                  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
-
-    <p><i class="fa-solid fa-folder-tree"></i><a href="https://gabrielnbr.github.io/portfolio/"> Portfólio de Projetos</a></p>
-    <p><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/gabriel-nobre-galvao/"> Linkedin</a></p>
-    <p><i class="fa-brands fa-medium"></i><a href="https://medium.com/@gabrielnobregalvao"> Medium</a></p>
-    <p><i class="fa-brands fa-github"></i><a href="https://github.com/Gabrielnbr"> Git Hub</a></p>
-    <p><i class="fa-solid fa-envelope"></i><a href="mailto:gabrielnobregalvao@gmail.com"> E-mail</a></p>
-    '''
-    st.write(contato, unsafe_allow_html=True)
-
 def app():
     data = transformacao_dados.pull_data()
     
@@ -89,5 +75,3 @@ def app():
     
     st.header("Atributos")
     atributos()
-    
-    contato()
