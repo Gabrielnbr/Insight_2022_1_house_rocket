@@ -9,3 +9,4 @@ protobuf==3.20.3
 seaborn==0.11.2
 streamlit==1.8.1
 streamlit-folium==0.6.4
+altair==4.2.2
